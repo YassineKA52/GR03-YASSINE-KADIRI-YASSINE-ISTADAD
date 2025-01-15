@@ -56,7 +56,7 @@ button:hover {
     color: black;
 }
 
-ul {
+.navBar {
     list-style-type: none;
     overflow: hidden;
     display: flex;
@@ -67,11 +67,11 @@ ul {
     height: 50px;           
 }
 
-li {
+.navBar li {
     margin: 0 10px; 
 }
 
-li a {
+.navBar li a {
     display: block;
     padding: 5px;
     text-align: center;
@@ -80,13 +80,12 @@ li a {
     transition: 0.5s;
 }
 
-li a:hover, li a:focus {
+.navBar li a:hover, .navBar li a:focus {
     border-bottom: 3px solid black;
 }
 .active {
     border-bottom: 2px solid black;
-    font-weight: bold;             
-    color: blue;                  
+    font-weight: bold;                              
 }
 header {
     background-color: lightcyan;

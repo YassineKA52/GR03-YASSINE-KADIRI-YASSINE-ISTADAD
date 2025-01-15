@@ -4,55 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MoveETS</title>
+    <link rel="stylesheet" href="/styleFormulaire.css">
 </head>
 
 <body>
     <header>
         <nav>
-            <a href="PageAcceuil.html"><img src="/Images/logo.PNG" alt="" width="250" height="200"></a>
+            <a href="PageAcceuil.html"><img src="/Images/logo.PNG" alt="" width="120" height="100"></a>
             <a href="PageActivite.html">Activités</a>
             <a href="PageFormulaire.html">Formulaire</a>
         </nav>
     </header>
 
     <main>
-        <h1> MODIFICATION DE L'ACTIVITÉ </h1>
-        <form action="">
-            <label for="nom_activite">Nom de l'activité : </label> <br>
-            <input type="text" name="nom_activite" id="nom_activite" placeholder="Yoga"> <br>
+        <div class="form-Container">
+            <h1> MODIFICATION DE L'ACTIVITÉ </h1>
+            <form action="">
+                <label for="nom_activite">Nom de l'activité : </label> <br>
+                <input type="text" name="nom_activite" id="nom_activite" placeholder="Yoga"> <br>
 
-            <label for="description">Description :</label> <br>
-            <textarea name="description" id="description" rows="6" cols="40"
-                placeholder="Détendez votre esprit et améliorez votre flexibilié avec nos cours de yoga."></textarea>
-            <br>
+                <label for="description">Description :</label> <br>
+                <textarea name="description" id="description" rows="6" cols="40"
+                    placeholder="Détendez votre esprit et améliorez votre flexibilié avec nos cours de yoga."></textarea>
+                <br>
 
-            <label for="lien_image">Image (URL) : </label> <br>
-            <input type="url" name="lien_image" id="lien_image" placeholder="image/yoga.jpeg"> <br>
+                <label for="lien_image">Image (URL) : </label> <br>
+                <input type="url" name="lien_image" id="lien_image" placeholder="image/yoga.jpeg"> <br>
 
-            <label for="niveau">Niveau : </label> <br>
-            <select name="niveau" id="niveau">
-                <option value=""></option>
-                <option value="debutant">Débutant</option>
-                <option value="intermediaire">Intermédiaire</option>
-                <option value="expert">Expert</option>
-            </select> <br> <br>
+                <label for="niveau">Niveau : </label> <br>
+                <select name="niveau" id="niveau">
+                    <option value=""></option>
+                    <option value="debutant">Débutant</option>
+                    <option value="intermediaire">Intermédiaire</option>
+                    <option value="expert">Expert</option>
+                </select> <br>
 
-            <label for="coach">Coach : </label> <br>
-            <input type="text" name="coach" id="coach" placeholder="Walid Regragui"> <br>
+                <label for="coach">Coach : </label> <br>
+                <input type="text" name="coach" id="coach" placeholder="Walid Regragui"> <br>
 
-            <label for="horaire">Horaire :</label> <br>
-            <input type="text" name="horaire" id="horaire" placeholder="Vendredi 18h-19h"> <br>
+                <label for="horaire">Horaire :</label> <br>
+                <input type="text" name="horaire" id="horaire" placeholder="Vendredi 18h-19h"> <br>
 
-            <label for="lieu">Lieu : </label> <br>
-            <select name="lieu" id="lieu">
-                <option value=""></option>
-                <option value="interieur">Intérieur</option>
-                <option value="exterieur">Extérieur</option>
-            </select> <br> <br>
+                <label for="lieu">Lieu : </label> <br>
+                <select name="lieu" id="lieu">
+                    <option value=""></option>
+                    <option value="interieur">Intérieur</option>
+                    <option value="exterieur">Extérieur</option>
+                </select> <br> <br>
 
-            <input type="submit" value="Appliquer">
+                <input type="submit" value="Appliquer">
 
-        </form>
+            </form>
+        </div>
 
     </main>
 

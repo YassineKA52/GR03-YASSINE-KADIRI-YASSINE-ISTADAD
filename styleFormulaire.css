@@ -1,0 +1,39 @@
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightsteelblue;
+}
+
+header {
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 520px;
+    height: 500px;
+    background-color: lightslategrey;
+    border-radius: 40px;
+    border-style: solid;
+    border-color: black;
+}
+
+.form-Container label {
+font-family: 'Times New Roman', Times, serif;
+font-weight: bold;
+
+}
+

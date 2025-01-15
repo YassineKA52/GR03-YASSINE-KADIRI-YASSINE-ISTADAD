@@ -47,3 +47,27 @@ nav {
     width: auto;   
 }
 
+footer {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    color: white;
+    font-size: smaller;
+}
+.containerFooter {
+    padding: 30px;
+    display: flex;
+    width: 100%;  
+}
+#boite1 {
+    width: 30%;
+}
+#boite2 {
+    width: 60%;
+}
+#boite3 {
+    width: 10%;
+}
+

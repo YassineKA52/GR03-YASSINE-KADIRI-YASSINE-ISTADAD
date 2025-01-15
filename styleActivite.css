@@ -51,3 +51,32 @@ nav {
     height: 50px;
     width: auto;   
 }
+footer {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px;
+    flex-wrap: wrap;
+    color: white;
+    font-size: smaller;
+}
+.containerFooter {
+    padding: 10px;
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+  
+    
+}
+#boite1 {
+    width: 30%;
+    
+}
+#boite2 {
+    width: 60%;
+}
+#boite3 {
+    width: 10%;
+}

@@ -2,54 +2,62 @@
     list-style-type: none;
     overflow: hidden;
     display: flex;
-    justify-content: center; 
-    align-items: center;   
-    margin: 0;             
-    padding: 0;            
-    height: 50px;           
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 50px;
 }
 
 .navBar li {
-    margin: 0 10px; 
+    margin: 0 10px;
 }
 
 .navBar li a {
     display: block;
     padding: 5px;
     text-align: center;
-    text-decoration: none; 
+    text-decoration: none;
     color: black;
     transition: 0.5s;
 }
 
-.navBar li a:hover, .navBar li a:focus {
+.navBar li a:hover,
+.navBar li a:focus {
     border-bottom: 3px solid black;
 }
+
 .active {
     border-bottom: 2px solid black;
-    font-weight: bold;                              
+    font-weight: bold;
 }
 
 header {
-    background-color: lightcyan;
-    height: 60px; 
+    background-color: orange;
+    height: 80px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: sticky;
+    top: 0;
 
 }
+
 html {
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: darkblue;
 }
+
 nav {
     flex: 1;
     display: flex;
     justify-content: center;
-    
+
 }
+
 #imgHeader {
-    height: 50px;
-    width: auto;   
+    height: 80%;
+    width: auto;
 }
 
 footer {
@@ -61,20 +69,75 @@ footer {
     color: white;
     font-size: smaller;
 }
+
 .containerFooter {
     padding: 30px;
     display: flex;
-    width: 100%;  
+    width: 100%;
 }
+
 #boite1 {
     width: 30%;
 }
+
 #boite2 {
     width: 60%;
 }
+
 #boite3 {
     width: 10%;
 }
+
 main {
     display: grid;
+}
+
+.boiteActivite {
+    display: flex;
+    border-style: hidden;
+    border-style: outset;
+    padding: 10px;
+    background: url(Images/background-soccer.webp) no-repeat center fixed;
+    color: azure;
+}
+
+.image {
+    height: 180px;
+    width: auto;
+    border: 2px solid orange;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    padding: 5px;
+}
+
+.description li {
+    padding: 15px;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+figcaption {
+    color: orange;
+    font-style: oblique;
+
+}
+
+button {
+    margin-left: 33px;
+    background-color: orange;
+
+}
+
+form {
+    color: white;
 }

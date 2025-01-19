@@ -1,3 +1,33 @@
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    background-color: lightsteelblue;
+}
+
+#activite-Container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+}
+
+#container {
+    display: flex;
+    justify-content: space-between;
+    background-color: yellow;
+    align-items: center;
+}
+
+figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
 .navBar {
     list-style-type: none;
     overflow: hidden;

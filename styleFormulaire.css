@@ -1,13 +1,28 @@
 body {
     display: grid;
     grid-template-rows: auto 1fr auto;
-    background-color: lightsteelblue;
+    background-color: #B8CBD0;
 }
 
 main {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.form-Container:hover form {
+    background-color: #7A90A4;
+}
+
+form {
+    margin-bottom: 30px;
+    padding: 10px;
+    padding-top: 5px;
+    border-radius: 10px;
+}
+
+h2 {
+    margin-bottom: 0px;
 }
 
 .form-Container {
@@ -17,10 +32,13 @@ main {
     align-items: center;
     width: 520px;
     height: 500px;
-    background-color: lightslategrey;
+    background-color: #709CA7;
     border-radius: 10px;
     border-style: solid;
     border-color: black;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-top: 30px;
 }
 
 form label {
@@ -88,7 +106,7 @@ button:hover {
     font-weight: bold;                              
 }
 header {
-    background-color: lightcyan;
+    background-color: #137C8B;
     height: 80px; 
     display: flex;
     align-items: center;
@@ -112,7 +130,7 @@ nav {
 }
 
 footer {
-    background-color: black;
+    background-color: #344D59;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -133,4 +151,12 @@ footer {
 }
 #boite3 {
     width: 10%;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
 }

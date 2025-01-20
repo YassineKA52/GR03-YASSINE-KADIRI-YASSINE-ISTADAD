@@ -94,7 +94,7 @@ main {
     border-style: hidden;
     border-style: outset;
     padding: 10px;
-    background: url(Images/sport-background.webp) no-repeat center fixed;
+    background: url(Images/fond-bleu.png) no-repeat center fixed;
     background-size: cover;
    
     color: azure;
@@ -122,13 +122,12 @@ li {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    color: black;
 }
 
 figcaption {
-    color: #137C8B;
-    font-style: oblique;
-
+    text-shadow: none;
+    color: #00879c;
 }
 
 button {
@@ -154,4 +153,12 @@ html, body {
 #activite {
     height: calc(80vh - 110px);
     overflow-y: auto;
+}
+.ajouter {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+button:hover {
+    background-color: #b8cbd0;
 }

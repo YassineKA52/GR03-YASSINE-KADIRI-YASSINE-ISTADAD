@@ -19,7 +19,6 @@
     </header>
     <br>
     <main>
-        <div id="fitre">
             <form action="">
                 <label for="niveau">Niveau:</label>
                 <select name="niveau" id="niveau">
@@ -45,26 +44,16 @@
                 </select>
 
                 <label for="horaire">Jour:</label>
-                <select name="horaire" id="horaire">
-                    <option value=""></option>
-                    <option value="lundi">Lundi</option>
-                    <option value="mardi">Mardi</option>
-                    <option value="mercredi">Mercredi</option>
-                    <option value="jeudi">Jeudi</option>
-                    <option value="vendredi">Vendredi</option>
-                    <option value="samedi">Samedi</option>
-                    <option value="dimanche">Dimanche</option>
-                </select>
-
+                <input type="date" name="heure" id="heure" placeholder="12:00">
+                
                 <label for="heure">Heure:</label>
-                <input type="text" name="heure" id="heure" placeholder="12:00">
+                <input type="time" name="heure" id="heure" placeholder="12:00">
 
                 <label for="duree">Durée:</label>
                 <input type="text" name="duree" id="duree" placeholder="ex: 30 minutes">
 
                 <input type="submit" value="Appliquer">
             </form>
-        </div>
 
         <div id="activite">
             <figure class="boiteActivite">

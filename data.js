@@ -1,4 +1,5 @@
 // donnÃ©es des activitÃ©s
+/*
 const activities = [
     {
         id: 1,
@@ -67,6 +68,66 @@ const activities = [
         location: "ExtÃ©rieur",
     }
 ];
+*/
+
+const activities = [
+    {
+        id: 1,
+        name: "Soccer",
+        description: "Vous aimez courir, la compétition et le travail d'équipe ? Alors le soccer est fait pour vous ! Interdiction d'utiliser les mains ici, jouez avec vos coéquipiers pour glisser le ballon dans le filet adverse. L'équipe qui a le plus de buts avant le temps imparti gagne.",
+        image: "/Images/soccer.webp",
+        level: "Expert",
+        coach: "Coach Messi",
+        schedule_day: "Jeudi",
+        schedule_time: "18h - 19h",
+        location: "Extérieur",
+    },
+    {
+        id: 2,
+        name: "Basketball",
+        description: "Si vous aimez les principes du soccer mais vous cherchez une autre alternative, alors vous pourriez aimer le basketball. Ce sport se joue uniquement avec les mains; il suffit de lancer le ballon dans un filet installé en hauteur.",
+        image: "/Images/basketball.webp",
+        level: "Débutant",
+        coach: "Coach Lebron",
+        schedule_day: "Lundi",
+        schedule_time: "10h - 11h",
+        location: "Intérieur",
+    },
+    {
+        id: 3,
+        name: "Course à pied",
+        description: "Si vous n'êtes pas trop intéressé par les sports d'équipe, vous pourriez vous tourner vers la course à pied. Parfaite pour ceux qui souhaitent se maintenir en forme, renforcer leur endurance et évacuer leur stress.",
+        image: "/Images/course_a_pied.webp",
+        level: "Intermédiaire",
+        coach: "Coach Yassine",
+        schedule_day: "Mercredi",
+        schedule_time: "7h - 8h",
+        location: "Extérieur",
+    },
+    {
+        id: 4,
+        name: "Musculation",
+        description: "Développez votre force et endurance avec nos séances de musculation adaptées à tous les niveaux. Idéal pour renforcer vos muscles et améliorer votre forme générale.",
+        image: "/Images/musculation.webp",
+        level: "Intermédiaire",
+        coach: "Coach Yassine",
+        schedule_day: "Vendredi",
+        schedule_time: "16h - 17h",
+        location: "Intérieur",
+    },
+    {
+        id: 5,
+        name: "Zumba",
+        description: "Améliorez votre condition physique tout en vous amusant avec nos cours de Zumba. Parfait pour vous déhancher sur des rythmes entraînants.",
+        image: "/Images/zumba.webp",
+        level: "Débutant",
+        coach: "Coach Yassine",
+        schedule_day: "Lundi",
+        schedule_time: "18h - 19h",
+        location: "Extérieur",
+    },
+];
+
 
 function init() {
     

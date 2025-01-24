@@ -73,8 +73,42 @@ function init() {
 }
 
 // affiche les activitÃ©s populaires pour la page d'accueil
-function displayPopularActivities() {
-    
+function displayPopularActivities() 
+{
+    const container = document.getElementById("activite-populaire-Container");
+    container.innerHTML = "";
+
+    for (let i = 0; i < 4; i++) 
+    {
+        const newfigure = document.createElement("figure");
+        const titreFigcaption = document.createElement("figcaption");
+        const titre = document.createElement("h3");
+
+        titre.innerText = activities[i].name;
+        titreFigcaption.appendChild(titre);
+
+        const image = document.createElement("img");
+        image.src = activities[i].image;
+        image.alt = "PHOTO";
+        image.width = 200;
+        image.height = 200;
+        image.classList.add("image");
+
+        const descrFigcaption = document.createElement("figcaption");
+        descrFigcaption.innerText = activities[i].description;
+
+        const br1 = document.createElement("br");
+        const br2 = document.createElement("br");
+
+        newfigure.appendChild(titreFigcaption);
+        newfigure.appendChild(image);
+        newfigure.appendChild(br1);
+        newfigure.appendChild(br2);
+        newfigure.appendChild(descrFigcaption);
+
+        container.appendChild(newfigure); 
+    }
+   
 }
 
 // gestion des filtres pour la page des activitÃ©s
@@ -90,3 +124,7 @@ function displayFilteredActivities(filters) {
 function populateForm(activity) {
    
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    displayPopularActivities();
+});

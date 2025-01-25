@@ -186,6 +186,30 @@ function populateForm(activity) {
    
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => 
+{
+    const boiteActivite = document.getElementsByClassName("boiteActivite");
+
+    for (let i = 0; i < boiteActivite.length; i++) 
+    {
+        const boutons = boiteActivite[i].getElementsByTagName("button")[0];
+
+        if (boutons) 
+        {
+            boutons.addEventListener("click", (evenement) => 
+            {
+                evenement.preventDefault();
+            
+                if (activities[i]) 
+                {
+                    window.location.href = `PageFormulaire.html?id=${activities[i].id}`;
+                }
+            
+            });
+
+        }
+
+    }
+
     displayPopularActivities();
 });

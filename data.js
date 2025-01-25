@@ -245,5 +245,6 @@ document.addEventListener("DOMContentLoaded", () =>
     
     displayPopularActivities();
     populateForm();
-
+    displayFilteredActivities(); 
+    populateFilters();
 });

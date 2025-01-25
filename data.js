@@ -76,55 +76,55 @@ const activities = [
         name: "Soccer",
         description: "Vous aimez courir, la compétition et le travail d'équipe ? Alors le soccer est fait pour vous !",
         image: "/Images/soccer.webp",
-        level: "Expert",
+        level: "expert",
         coach: "Coach Messi",
         schedule_day: "Jeudi",
-        schedule_time: "18h - 19h",
-        location: "Extérieur",
+        schedule_time: "18:00",
+        location: "exterieur",
     },
     {
         id: 2,
         name: "Basketball",
         description: "Si vous aimez les principes du soccer mais vous cherchez une autre alternative, alors vous pourriez aimer le basketball.",
         image: "/Images/basketball.webp",
-        level: "Débutant",
+        level: "debutant",
         coach: "Coach Lebron",
         schedule_day: "Lundi",
-        schedule_time: "10h - 11h",
-        location: "Intérieur",
+        schedule_time: "10:00",
+        location: "interieur",
     },
     {
         id: 3,
         name: "Course à pied",
         description: "Parfaite pour ceux qui souhaitent se maintenir en forme, renforcer leur endurance et évacuer leur stress.",
         image: "/Images/course_a_pied.webp",
-        level: "Intermédiaire",
+        level: "intermediaire",
         coach: "Coach Yassine",
         schedule_day: "Mercredi",
-        schedule_time: "7h - 8h",
-        location: "Extérieur",
+        schedule_time: "07:00",
+        location: "exterieur",
     },
     {
         id: 4,
         name: "Musculation",
-        description: "Idéal pour renforcer vos muscles et améliorer votre forme générale.",
+        description: "Idéal pour renforcer vos muscles, améliorer votre forme générale ainsi que votre estime de soi.",
         image: "/Images/musculation.webp",
-        level: "Intermédiaire",
+        level: "intermediaire",
         coach: "Coach Yassine",
         schedule_day: "Vendredi",
-        schedule_time: "16h - 17h",
-        location: "Intérieur",
+        schedule_time: "16:00",
+        location: "interieur",
     },
     {
         id: 5,
         name: "Zumba",
         description: "Améliorez votre condition physique tout en vous amusant avec nos cours de Zumba.",
         image: "/Images/zumba.webp",
-        level: "Débutant",
+        level: "debutant",
         coach: "Coach Yassine",
         schedule_day: "Lundi",
-        schedule_time: "18h - 19h",
-        location: "Extérieur",
+        schedule_time: "18:00",
+        location: "exterieur",
     },
 ];
 
@@ -137,6 +137,11 @@ function init() {
 function displayPopularActivities() 
 {
     const container = document.getElementById("activite-populaire-Container");
+
+    if (!container) 
+    {
+        return;
+    }
     container.innerHTML = "";
 
     for (let i = 0; i < 4; i++) 
@@ -151,8 +156,8 @@ function displayPopularActivities()
         const image = document.createElement("img");
         image.src = activities[i].image;
         image.alt = "PHOTO";
-        image.width = 200;
-        image.height = 200;
+        image.width = 250;
+        image.height = 250;
         image.classList.add("image");
 
         const descrFigcaption = document.createElement("figcaption");
@@ -182,12 +187,37 @@ function displayFilteredActivities(filters) {
     
 }
 
-function populateForm(activity) {
+function populateForm(activity) 
+{
+    const urlSearchP = new URLSearchParams(window.location.search);
+    const id = urlSearchP.get("id");
+    
+    activity = activities.find((act) => act.id == id);
+    
+    const nom = document.getElementById("nom_activite");
+    const description = document.getElementById("description");
+    const urlImage = document.getElementById("lien_image");
+    const niveau = document.getElementById("niveau");
+    const coach = document.getElementById("coach");
+    const horaire = document.getElementById("horaire");
+    const lieu = document.getElementById("lieu");
+
+
+    if (id) 
+    {
+        nom.value = activity.name;
+        description.value = activity.description;
+        urlImage.value = activity.image;
+        niveau.value = activity.level;
+        coach.value = activity.coach;
+        horaire.value = activity.schedule_time;
+        lieu.value = activity.location;
+    }
    
 }
 
 document.addEventListener("DOMContentLoaded", () => 
-{
+{   
     const boiteActivite = document.getElementsByClassName("boiteActivite");
 
     for (let i = 0; i < boiteActivite.length; i++) 
@@ -211,5 +241,9 @@ document.addEventListener("DOMContentLoaded", () =>
 
     }
 
+    
+    
     displayPopularActivities();
+    populateForm();
+
 });

@@ -179,12 +179,72 @@ function displayPopularActivities()
 
 // gestion des filtres pour la page des activitÃ©s
 function populateFilters() {
-    
+    const niveauSelect = document.getElementById("niveau");
+    const jourSelect = document.getElementById("jour");
+    const lieuSelect = document.getElementById("lieu");
+    const coachSelect = document.getElementById("entraineur");
+
+    function remplirSelect(selectElement, attributs) {
+
+        const tous = document.createElement("option");
+        tous.value = "tous";
+        tous.textContent = "Tous";
+        selectElement.appendChild(tous);
+
+        const attributsActivite = [...new Set(activities.map(activite => activite[attributs]))];
+
+        attributsActivite.forEach(value => {
+            const option = document.createElement("option");
+            option.value = value.toLowerCase()
+            option.textContent = value;
+            selectElement.appendChild(option);
+        });
+    }
+
+    remplirSelect(niveauSelect, "level");
+    remplirSelect(jourSelect, "schedule_day");
+    remplirSelect(coachSelect, "coach");
+    remplirSelect(lieuSelect, "location");
 }
 
 // affiche toutes les activitÃ©s filtrÃ©es pour la page des activitÃ©s
 function displayFilteredActivities(filters) {
-    
+    const container = document.getElementById("activite");
+    if (!container) return;
+
+    container.innerHTML = ""; 
+
+    const filteredActivities = activities.filter(activite => {
+        return (
+            (!filters.niveau || filters.niveau == "tous" || activite.level.toLowerCase() == filters.niveau.toLowerCase()) &&
+            (!filters.lieu || filters.lieu == "tous" || activite.location.toLowerCase() == filters.lieu.toLowerCase()) &&
+            (!filters.entraineur || filters.entraineur == "tous" || activite.coach.toLowerCase() == filters.entraineur.toLowerCase()) &&
+            (!filters.jour || filters.jour == "tous" || activite.schedule_day.toLowerCase() == filters.jour.toLowerCase())
+        );
+    });
+
+    filteredActivities.forEach(activity => {
+
+        const figure = document.createElement("figure");
+        figure.className = "boiteActivite";
+
+        figure.innerHTML = `
+            <ul>
+                <li><img src="${activity.image}" alt="${activity.name}" width="500" height="500" class="image"></li>
+                <li><a href="PageFormulaire.html?id=${activity.id}"><button>Modifier l'activité</button></a></li>
+            </ul>
+            <div class="description">
+                <figcaption><strong>${activity.name}</strong></figcaption>
+                <ul>
+                    <li><strong>Horaire:</strong> ${activity.schedule_day}</li>
+                    <li><strong>Niveau:</strong> ${activity.level}</li>
+                    <li><strong>Entraineur:</strong> ${activity.coach}</li>
+                    <li><strong>Lieu:</strong> ${activity.location}</li>
+                </ul>
+            </div>   `;
+
+        container.appendChild(figure);
+    });
 }
 
 function populateForm(activity) 
@@ -245,6 +305,20 @@ document.addEventListener("DOMContentLoaded", () =>
     
     displayPopularActivities();
     populateForm();
-    displayFilteredActivities(); 
+    displayFilteredActivities({ niveau: "tous", lieu: "tous", entraineur: "tous", jour: "tous" });
     populateFilters();
+
+    document.getElementById("niveau").form.addEventListener("submit", function (event) {
+        event.preventDefault();
+    
+        const filters = {
+            niveau: document.getElementById("niveau").value,
+            lieu: document.getElementById("lieu").value,
+            entraineur: document.getElementById("entraineur").value,
+            jour: document.getElementById("jour").value,
+        };
+    
+        displayFilteredActivities(filters);
+    });
+
 });

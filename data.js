@@ -245,6 +245,12 @@ function displayFilteredActivities(filters) {
 
         container.appendChild(figure);
     });
+
+    const ajouterActivite = document.createElement("div");
+    ajouterActivite.className = "ajouter";
+    ajouterActivite.innerHTML = `<a href="/Html/PageFormulaire.html"><button>Ajouter une activité</button></a>`;
+
+    container.appendChild(ajouterActivite);
 }
 
 function populateForm(activity) 

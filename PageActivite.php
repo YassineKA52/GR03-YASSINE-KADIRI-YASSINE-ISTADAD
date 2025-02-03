@@ -11,11 +11,11 @@
 
 <body>
     <header>
-        <a href="PageAcceuil.html"><img src="/Images/logo.PNG" alt="Logo" id="imgHeader"></a>
+        <a href="/index.php"><img src="/Images/logo.PNG" alt="Logo" id="imgHeader"></a>
         <nav>
             <ul class="navBar">
-                <li><a href="PageActivite.html" class="active">ACTIVITÉS</a></li>
-                <li><a href="PageFormulaire.html">FORMULAIRE</a></li>
+                <li><a href="/PageActivite.php" class="active">ACTIVITÉS</a></li>
+                <li><a href="/PageFormulaire.php">FORMULAIRE</a></li>
             </ul>
         </nav>
     </header>

@@ -302,13 +302,10 @@ document.addEventListener("DOMContentLoaded", () =>
                 }
             
             });
-
         }
-
     }
+    
 
-    
-    
     displayPopularActivities();
     populateForm();
     displayFilteredActivities({ niveau: "tous", lieu: "tous", entraineur: "tous", jour: "tous" });

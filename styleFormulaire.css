@@ -162,12 +162,17 @@ html, body {
     height: 100%;
     box-sizing: border-box;
 }
-.erreur {
-    color: red;
-}
-.container-login {
+
+.container-login, .container-register{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+#msgErreur {
+    color: red;
+}
+
+#msgValidation {
+    color: green;
 }

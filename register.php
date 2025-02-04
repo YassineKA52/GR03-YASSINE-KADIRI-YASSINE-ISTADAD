@@ -71,10 +71,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST")
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription</title>
-    <link rel="stylesheet" href="/styleRegister.css">
+    <link rel="stylesheet" href="/styleFormulaire.css">
 </head>
 <body>
-    <h1>Créer un compte</h1>
+    <div class="container-register">
+    <h2>Créer un compte</h2>
 
     <?php if ($msgErreur): ?>
         <p id="msgErreur"><?php echo $msgErreur; ?></p>
@@ -83,6 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST")
         <p id="msgValidation"><?php echo $msgValidation; ?></p>
     <?php endif; ?>
 
+    <div class="form-Container">
     <form method="POST" action="register.php">
     <label for="nom_utilisateur">Nom d'utilisateur :</label>
         <input type="text" name="nom_utilisateur" id="nom_utilisateur" value="<?php echo htmlspecialchars($nomUtilisateur ?? ''); ?>">
@@ -101,7 +103,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST")
 
         <button type="submit">Créer un compte</button>
     </form>
-
+    </div>
+ 
     <p>Vous êtes déja inscrit parmis nous ? <a href="login.php">Connectez-vous ici</a>.</p>
+    </div>
+
 </body>
 </html>

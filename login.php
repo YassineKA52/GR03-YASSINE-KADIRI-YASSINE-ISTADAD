@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <h2>Connexion</h2>
     <br>
     <?php if ($error): ?>
-        <p class="erreur"><?= htmlspecialchars($error) ?></p>
+        <p id="msgErreur"><?= htmlspecialchars($error) ?></p>
     <?php endif; ?>
     <br>
     <div class="form-Container">

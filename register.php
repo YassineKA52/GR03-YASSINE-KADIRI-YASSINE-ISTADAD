@@ -9,11 +9,11 @@ $nom = $prenom = $nomUtilisateur = "";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") 
 {
-    $nom = $_POST["nom"];
-    $prenom = $_POST["prenom"];
-    $nomUtilisateur = $_POST["nom_utilisateur"];
-    $mdp = $_POST["mdp"];
-    $confirmerMdp = $_POST["confirmer_mdp"];
+    $nom = htmlspecialchars(trim($_POST["nom"] ?? ''));
+    $prenom = htmlspecialchars(trim($_POST["prenom"] ?? ''));
+    $nomUtilisateur = htmlspecialchars(trim($_POST["nom_utilisateur"] ?? ''));
+    $mdp = $_POST["mdp"] ?? '';
+    $confirmerMdp = $_POST["confirmer_mdp"] ?? '';
 
     if (empty($nom) || empty($prenom) || empty($nomUtilisateur) || empty($mdp) || empty($confirmerMdp)) 
     {

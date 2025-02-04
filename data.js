@@ -179,10 +179,8 @@ function displayPopularActivities()
 
 // gestion des filtres pour la page des activitÃ©s
 function populateFilters() {
-    const niveauSelect = document.getElementById("niveau");
+
     const jourSelect = document.getElementById("jour");
-    const lieuSelect = document.getElementById("lieu");
-    const coachSelect = document.getElementById("entraineur");
 
     function remplirSelect(selectElement, attributs) {
 
@@ -201,10 +199,7 @@ function populateFilters() {
         });
     }
 
-    remplirSelect(niveauSelect, "level");
     remplirSelect(jourSelect, "schedule_day");
-    remplirSelect(coachSelect, "coach");
-    remplirSelect(lieuSelect, "location");
 }
 
 // affiche toutes les activitÃ©s filtrÃ©es pour la page des activitÃ©s
@@ -231,7 +226,7 @@ function displayFilteredActivities(filters) {
         figure.innerHTML = `
             <ul>
                 <li><img src="${activity.image}" alt="${activity.name}" width="500" height="500" class="image"></li>
-                <li><a href="PageFormulaire.html?id=${activity.id}"><button>Modifier l'activité</button></a></li>
+                <li><a href="/PageFormulaire.php?id=${activity.id}"><button>Modifier l'activité</button></a></li>
             </ul>
             <div class="description">
                 <figcaption><strong>${activity.name}</strong></figcaption>
@@ -248,7 +243,7 @@ function displayFilteredActivities(filters) {
 
     const ajouterActivite = document.createElement("div");
     ajouterActivite.className = "ajouter";
-    ajouterActivite.innerHTML = `<a href="/Html/PageFormulaire.html"><button>Ajouter une activité</button></a>`;
+    ajouterActivite.innerHTML = `<a href="/PageFormulaire.php"><button>Ajouter une activité</button></a>`;
 
     container.appendChild(ajouterActivite);
 }
@@ -298,7 +293,7 @@ document.addEventListener("DOMContentLoaded", () =>
             
                 if (activities[i]) 
                 {
-                    window.location.href = `PageFormulaire.html?id=${activities[i].id}`;
+                    window.location.href = `/PageFormulaire.php?id=${activities[i].id}`;
                 }
             
             });

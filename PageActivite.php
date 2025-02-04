@@ -1,3 +1,13 @@
+<?php
+require_once 'config.php';
+
+pasConnecter();
+
+$listeEntraineurs = recupererEntraineur();
+$listeNiveaux = recupererNiveaux();
+$listeLieux = recupererLieux();
+?>
+
 <html lang="en">
 
 <head>
@@ -21,19 +31,37 @@
     </header>
     <br>
     <main>
-        <form action="">
-            <label for="niveau">Niveau:</label>
-            <select name="niveau" id="niveau">
-            </select>
+        <form method="GET" action="">
+            
+        <label for="niveau">Niveau:</label>
+    <select name="niveau" id="niveau">
+        <option value="">Tous</option>
+        <?php foreach ($listeNiveaux as $niveau): ?>
+            <option value="<?= htmlspecialchars($niveau['name']) ?>">
+                <?= htmlspecialchars($niveau['name']) ?>
+            </option>
+        <?php endforeach; ?>
+    </select>
 
+    <label for="lieu">Lieu:</label>
+    <select name="lieu" id="lieu">
+        <option value="">Tous</option>
+        <?php foreach ($listeLieux as $lieu): ?>
+            <option value="<?= htmlspecialchars($lieu['name']) ?>">
+                <?= htmlspecialchars($lieu['name']) ?>
+            </option>
+        <?php endforeach; ?>
+    </select>
 
-            <label for="lieu">Lieu:</label>
-            <select name="lieu" id="lieu">
-            </select>
-
-            <label for="entraineur">Entraîneur:</label>
-            <select name="entraineur" id="entraineur">
-            </select>
+    <label for="entraineur">Entraîneur:</label>
+    <select name="entraineur" id="entraineur">
+        <option value="">Tous</option>
+        <?php foreach ($listeEntraineurs as $coach): ?>
+            <option value="<?= htmlspecialchars($coach['name']) ?>">
+                <?= htmlspecialchars($coach['name']) ?>
+            </option>
+        <?php endforeach; ?>
+    </select>
 
             <label for="horaire">Jour:</label>
             <select name="jour" id="jour">
@@ -52,7 +80,7 @@
             <figure class="boiteActivite">
                 <ul>
                     <li><img src="/Images/soccer.webp" alt="" width="500" height="500" class="image"></li>
-                    <li><a href="PageFormulaire.html"><button>Modifier l'activité</button></a></li>
+                    <li><a href="/PageFormulaire.php"><button>Modifier l'activité</button></a></li>
                 </ul>
 
                 <div class="description">
@@ -64,7 +92,7 @@
             <figure class="boiteActivite">
                 <ul>
                     <li><img src="/Images/basketball.webp" alt="" width="500" height="500" class="image"></li>
-                    <li><a href="PageFormulaire.html"><button>Modifier l'activité</button></a></li>
+                    <li><a href="/PageFormulaire.php"><button>Modifier l'activité</button></a></li>
                 </ul>
 
                 <div class="description">
@@ -76,7 +104,7 @@
             <figure class="boiteActivite">
                 <ul>
                     <li><img src="/Images/course_a_pied.webp" alt="" width="500" height="500" class="image"></li>
-                    <li><a href="PageFormulaire.html"><button>Modifier l'activité</button></a></li>
+                    <li><a href="/PageFormulaire.php"><button>Modifier l'activité</button></a></li>
                 </ul>
 
                 <div class="description">
@@ -87,7 +115,7 @@
             <figure class="boiteActivite">
                 <ul>
                     <li><img src="/Images/musculation.webp" alt="" width="500" height="500" class="image"></li>
-                    <li><a href="PageFormulaire.html"><button>Modifier l'activité</button></a></li>
+                    <li><a href="/PageFormulaire.php"><button>Modifier l'activité</button></a></li>
                 </ul>
 
                 <div class="description">
@@ -99,7 +127,7 @@
             <figure class="boiteActivite">
                 <ul>
                     <li><img src="/Images/zumba.webp" alt="" width="500" height="500" class="image"></li>
-                    <li><a href="PageFormulaire.html"><button>Modifier l'activité</button></a></li>
+                    <li><a href="/PageFormulaire.php"><button>Modifier l'activité</button></a></li>
                 </ul>
 
                 <div class="description">
@@ -108,7 +136,7 @@
 
             </figure>
             <div class="ajouter">
-                <a href="/Html/PageFormulaire.html"><button>Ajouter une activité</button></a>
+                <a href="/PageFormulaire.php"><button>Ajouter une activité</button></a>
             </div>
 
         </div>

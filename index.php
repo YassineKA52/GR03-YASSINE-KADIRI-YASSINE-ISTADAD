@@ -1,3 +1,10 @@
+<?php
+require_once 'config.php';
+
+pasConnecter();
+
+?>
+
 <html lang="en">
 
 <head>
@@ -38,7 +45,7 @@
                    
                 </div>
 
-                <a href="PageActivite.html"> <button>Voir toutes les activités</button></a>
+                <a href="/PageActivite.php"> <button>Voir toutes les activités</button></a>
             </div>
         
         </div>
